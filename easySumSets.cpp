@@ -1,4 +1,5 @@
-/*In this problem, we define "set" is a collection of distinct numbers. For two sets A and B,
+/*
+In this problem, we define "set" is a collection of distinct numbers. For two sets A and B,
 we define their sum set is a set S(A,B) = {a + b|a belongs to A, b belongs to B}. In other word,
 set S(A, B) contains all elements which can be represented as sum of an element in A and an element
 in B. Given two sets A,C your task is to find set B of positive integers less than or equals 100
