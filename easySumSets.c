@@ -37,25 +37,22 @@ If e is an element of set B, then e+2 is an element of set C, so we must have e 
 1+1 = 2 is not an element of set C. Therefore, B = {2,3}.
 
 */
-#include<iostream>
-using namespace std;
-
 int main() {
-    int temp = 0,A,C;
-    cin>>A;
-    int *arrA = malloc(sizeof(int)*A);
-    
-    for(int i=0;i<A;i++)
-        cin>>arrA+i;
+	int temp = 0, A, C;
+	scanf("%d",&A);
+	int *arrA = malloc(sizeof(int)*A);
 
-    cin>>C;
-    int *arrC = malloc(sizeof(int)*C);
-    
-    for(int i=0;i<C;i++)
-        cin>>arrC+i;
-    
-    int *arrB = malloc(sizeof(int)*101);
+	for(int i=0;i<A;i++)
+		scanf("%d",arrA+i);
 
+	scanf("%d",&C);
+	int *arrC = malloc(sizeof(int)*C);
+
+	for(int i=0;i<C;i++)
+		scanf("%d",arrC+i);
+
+	int *arrB = malloc(sizeof(int)*101);
+ 
     for(int i=0;i<C;i++) {
         for(int j=0;j<A;j++) {
             temp = arrC[i]-arrA[j];
@@ -63,10 +60,10 @@ int main() {
                 arrB[temp]++;
         }
     }
-
+ 
     for(int i=0;i<101;i++) {
-        if(arrB[i]==A)
-            cout<<i;
-    }
-    return 0;
+		if(arrB[i]==A)
+			printf("%d ",i);
+	}
+	return 0;
 }
