@@ -36,7 +36,7 @@
 import java.lang.*;
 import java.util.*;
 
-class ReductionStepCount {
+class stockDistro {
     public static void main(String args[]) {
         Scanner S=new Scanner(System.in);
         int numStock, dist = 0;
