@@ -8,7 +8,7 @@ output: 12
 
 """
 
-nums = list(map(int, raw_input().split()))
+nums = list(map(int, input().split()))
 nums.sort()
 
 limit = (len(nums) - 1)
