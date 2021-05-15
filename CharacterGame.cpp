@@ -22,11 +22,10 @@ int checkSubSequence(string stringX, string stringY) {
     li xLen = stringX.length();
     li yLen = stringY.length();
     li lenDiff = xLen - yLen;
-    
+
     if (lenDiff >= -1 && lenDiff <= 1) {
 
         li lastX = 0, i;
-        li diffCharCounter = 0;
 
         for (i = 0; i < xLen; ++i) {
             //if stringY is checked but not stringX, completely then return false.
@@ -41,11 +40,9 @@ int checkSubSequence(string stringX, string stringY) {
 
                 } else if (j == lastX+1) { // This block is only accessed in the last iteration of inner loop.
                     if (stringX[i+1] != stringY[j-1] && stringX[i+1] != stringY[j]) {
-                        //if contiguous 2 characters mismatches then result is returned as false(0).
-                        if (diffCharCounter == 1)
-                            return 0;
-                        else 
-                            ++diffCharCounter;
+                        //if contiguous 2 characters from stringX mismatches with
+                        //contiguous 2 charcters of stringY then result is returned as false(0).
+                        return  0;
 
                     } else if (stringX[i+1] == stringY[j-1]) {
                         //if the (ith + 1) character matches with previous jth character continue to check
@@ -77,11 +74,8 @@ int checkSubSequence(string stringX, string stringY) {
     // stringX : abcdefgh
     //stringY : ijklmnop
 
-    //The outer loop will run only 2 times and inner loop 2 times for each outter loop,
+    //The outer loop will run only 1 times and inner loop 2 times for each outter loop,
     // i.e., for i = 0 :
-    //              j 1-time
-    //              j 2-time
-    // for i = 1 :
     //              j 1-time
     //              j 2-time
     // then return false;
