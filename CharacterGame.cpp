@@ -21,19 +21,70 @@ using namespace std;
 int checkSubSequence(string stringX, string stringY) {
     li xLen = stringX.length();
     li yLen = stringY.length();
-    li maxLen = (xLen > yLen) ? xLen : yLen;
-    li lastX = 0;
+    li lenDiff = xLen - yLen;
+    
+    if (lenDiff >= -1 && lenDiff <= 1) {
 
-    for (li i = 0; i < yLen; ++i) {
-        for (li j = lastX; j < xLen;++j) {
-            if (stringY[i] == stringX[j]) {
-                ++lastX;
-                break;
+        li lastX = 0, i;
+        li diffCharCounter = 0;
+
+        for (i = 0; i < xLen; ++i) {
+            //if stringY is checked but not stringX, completely then return false.
+            if (i < xLen-1 && lastX >= yLen)
+                return 0;
+
+            for (li j = lastX; j < lastX+2 && j < yLen;++j) { //With this condition this oinner loop will execute
+                                                            // at-max 2 times not more than that for each iteration of outer loop.
+                if (stringX[i] == stringY[j]) {
+                    lastX = j+1;
+                    break;
+
+                } else if (j == lastX+1) { // This block is only accessed in the last iteration of inner loop.
+                    if (stringX[i+1] != stringY[j-1] && stringX[i+1] != stringY[j]) {
+                        //if contiguous 2 characters mismatches then result is returned as false(0).
+                        if (diffCharCounter == 1)
+                            return 0;
+                        else 
+                            ++diffCharCounter;
+
+                    } else if (stringX[i+1] == stringY[j-1]) {
+                        //if the (ith + 1) character matches with previous jth character continue to check
+                        //next 2 charcters and skip these 2 for the next iteration.
+                        lastX = j;
+                        i += 1;
+                        break;
+                    } else {
+                        //if the (ith + 1) character matches with jth character continue to check
+                        //next 2 charcters and skip these 2 for the next iteration.
+                        lastX = j+1;
+                        ++i;
+                        break;
+                    }
+                }
             }
         }
+
+        if (i >= xLen && lastX < yLen-1)  //if stringX is checked but not stringY, completely then return false.
+            return 0;
+
+    } else {
+        return 0;
     }
 
-    return maxLen - lastX;
+    return 1;
+
+    //With this approach if i check for strings like :
+    // stringX : abcdefgh
+    //stringY : ijklmnop
+
+    //The outer loop will run only 2 times and inner loop 2 times for each outter loop,
+    // i.e., for i = 0 :
+    //              j 1-time
+    //              j 2-time
+    // for i = 1 :
+    //              j 1-time
+    //              j 2-time
+    // then return false;
 }
 
 int main() {
