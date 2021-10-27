@@ -33,7 +33,6 @@ Explanation:
 
 */
 
-import java.lang.*;
 import java.util.*;
 
 class ReductionStepCount {
@@ -41,6 +40,7 @@ class ReductionStepCount {
         Scanner s=new Scanner(System.in);
         int num,opCount = 0;
         num = s.nextInt();
+        s.close();
         while (num != 0) {
         	if ((num % 2) == 0) {
         		num = num / 2;

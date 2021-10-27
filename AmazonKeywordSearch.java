@@ -79,6 +79,8 @@ public class AmazonKeywordSearch {
         for (int i = 0; i < n; ++i)
             repository.add(s.nextLine());
         
+            
+        s.close();
         String customerQuery = s.nextLine();
         List<List<String>> result = solution(repository, customerQuery);
        

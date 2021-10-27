@@ -19,7 +19,7 @@ class UniqueWordOccurance {
                     }
                 }
             }
-
+            buffer.close();
             List<Map.Entry<String, Integer>> list = new ArrayList<>(map.entrySet());
 
             Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
@@ -31,7 +31,7 @@ class UniqueWordOccurance {
                 }
             });
             for (int i = 0; i < 10; ++i) {
-                Map.Entry e = list.get(i);
+                Map.Entry<String, Integer> e = list.get(i);
                 System.out.println(e.getKey() + " : " + e.getValue());
             }
         } catch (Exception e) {

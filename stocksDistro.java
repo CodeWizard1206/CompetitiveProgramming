@@ -33,7 +33,6 @@
 // 1 is odd, 1 - 1 is 0. (5)
 // The total number of distributions is 5.
 
-import java.lang.*;
 import java.util.*;
 
 class stockDistro {
@@ -41,6 +40,7 @@ class stockDistro {
         Scanner S=new Scanner(System.in);
         int numStock, dist = 0;
         numStock = S.nextInt();
+        S.close();
         while (numStock != 0) {
         	if ((numStock % 2) == 0) {
         		numStock = numStock / 2;

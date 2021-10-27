@@ -1,4 +1,3 @@
-import java.lang.*;
 import java.util.*;
 
 class minimumStock {
@@ -20,6 +19,7 @@ class minimumStock {
             }
         }
 
+        S.close();
         int val = 0;
 
         for (Map.Entry<Integer, Integer> e : stock.entrySet()) {

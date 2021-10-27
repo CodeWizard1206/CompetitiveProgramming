@@ -54,7 +54,6 @@
 // Backward Shift: amam
 // Both the strings above are equal, so the output is 1.
 
-import java.lang.*;
 import java.util.Scanner;
 
 class SingleShiftPalindrome {
@@ -65,6 +64,7 @@ class SingleShiftPalindrome {
 
         str = S.nextLine();
 
+        S.close();
         bs = str.substring(1, str.length()) + str.substring(0, 1);
         fs = str.substring((str.length() - 1), str.length()) + str.substring(0, (str.length() - 1));
 

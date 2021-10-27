@@ -55,6 +55,7 @@ class Question_1 {
         char[][] P = new char[N][N];
         int z = 0;
 
+        S.close();
         for (int i = 0; i < N; ++i)
             for (int j = 0; j < N; ++j) {
                 P[i][j] = pattern[z].charAt(0);

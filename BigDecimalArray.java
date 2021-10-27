@@ -11,6 +11,7 @@ class BigDecimalArray {
             numArray[i] = S.next();
         }
 
+        S.close();
         Arrays.sort(numArray, 0, N, new Comparator<Object>() {
             public int compare(Object numOne, Object numTwo) {
                 BigDecimal bigOne = new BigDecimal((String) numOne);

@@ -28,6 +28,7 @@ class ThreeDigitLargest {
         int num = S.nextInt();
         int larger = 0;
 
+        S.close();
         do {
             int rem = num%1000;
             if (rem > larger) {

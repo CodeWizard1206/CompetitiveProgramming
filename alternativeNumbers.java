@@ -101,5 +101,6 @@ public class alternativeNumbers {
         }
 
         solution(list);
+        s.close();
     }
 }

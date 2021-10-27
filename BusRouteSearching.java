@@ -73,6 +73,7 @@ class BusRouteSearching {
       }
       testCasesResult[i] = low;
     }
+    S.close();
     for (int i = 1; i<=noOfTestCases; i++) {
       System.out.println("Case #"+i+": "+testCasesResult[i-1]);
     }

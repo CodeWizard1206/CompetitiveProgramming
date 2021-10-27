@@ -37,8 +37,7 @@
 // Explanation:
 // Scores 15, 5, 3, 9 can be multiplied by another number to equal 135 and 90 which will break the pillar.
 // So, the output is 4.
- 
-import java.lang.*;
+
 import java.util.Scanner;
 
 class winningPlayers {
@@ -56,6 +55,7 @@ class winningPlayers {
         health1 = S.nextLong();
         health2 = S.nextLong();
 
+        S.close();
         long winners = 0;
         for (int i = 0; i < N; ++i) {
             boolean pillarOne = (health1%scores[i] == 0);

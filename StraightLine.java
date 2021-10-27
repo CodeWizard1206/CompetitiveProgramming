@@ -68,6 +68,7 @@ class StraightLine {
             coord[i][1] = S.nextInt();
         }
 
+        S.close();
         if (checkLine(coord))
             System.out.println(xDiff + "x-" + yDiff + "y=0");
         else

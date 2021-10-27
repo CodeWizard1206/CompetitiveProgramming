@@ -28,7 +28,6 @@
 // The four ways will be "g.o..", "g..o.",
 // ".go.." and ".g.o.," "." is where characters are removed.
 
-import java.lang.*;
 import java.util.Scanner;
 
 class eliminateCharacters {
@@ -38,6 +37,7 @@ class eliminateCharacters {
         String s1 = S.nextLine();
         String s2 = S.nextLine();
 
+        S.close();
         int output = eliminateChar(s1, s2);
         System.out.println(output);
     }
